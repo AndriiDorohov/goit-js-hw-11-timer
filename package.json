@@ -1,5 +1,5 @@
 {
-  "name": "timer",
+  "name": "webpack-starter-kit",
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
@@ -14,10 +14,10 @@
     "url": "git+https://github.com/AndriiDorohov/goit-js-hw-11-timer.git"
   },
   "keywords": [],
-  "author": "Andrii Dorohov <wedpositive@gmail.com>",
+  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AndriiDorohov/goit-js-hw-11-timer/issues"
+    "url": "https://github.com/AndriiDorohov/goit-js-hw-11-timer//issues"
   },
   "homepage": "https://github.com/AndriiDorohov/goit-js-hw-11-timer#readme",
   "devDependencies": {
