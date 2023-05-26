@@ -7,8 +7,10 @@
     "lint:styles": "stylelint src",
     "lint:scripts": "eslint src",
     "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.prod.js",
-    "start": "webpack serve --config webpack/webpack.config.dev.js --open"
+    "start": "webpack serve --config webpack/webpack.config.dev.js --open",
+    "deploy": "gh-pages -d build"
   },
+  "branch": "gh-pages",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wbkd/webpack-starter.git"
@@ -40,6 +42,7 @@
     "eslint": "^8.28.0",
     "eslint-webpack-plugin": "^3.2.0",
     "file-loader": "^6.2.0",
+    "gh-pages": "^5.0.0",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.7.1",
