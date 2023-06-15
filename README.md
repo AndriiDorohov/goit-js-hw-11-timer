@@ -1,15 +1,15 @@
-# Таймер обратного отсчета
+# Countdown timer
 
-Создай плагин настраиваемого таймера, который ведет обратный отсчет до
-предварительно определенной даты. Такой плагин может использоваться в блогах и
-интернет-магазинах, страницах регистрации событий, во время технического
-обслуживания и т. д.
+Create a custom timer plugin that counts down to
+a predefined date. Such a plugin can be used in blogs and
+online stores, event registration pages, during
+maintenance, etc.
 
 ![preview](preview.gif)
 
-Плагин ожидает следующую HTML-разметку и показывает четыре цифры: дни, часы,
-минуты и секунды в формате `XX:XX:XX:XX`. Количество дней может состоять из
-более чем двух цифр.
+The plugin expects the following HTML markup and shows four digits: days, hours,
+minutes and seconds in the format `XX:XX:XX:XX`. The number of days can consist of
+more than two digits.
 
 ```html
 <div class="timer" id="timer-1">
@@ -35,8 +35,8 @@
 </div>
 ```
 
-Плагин это класс `CountdownTimer`, экземпляр которого создает новый таймер с
-настройками.
+The plugin is the `CountDownTimer` class, an instance of which creates a new timer with
+settings.
 
 ```js
 new CountdownTimer({
@@ -45,32 +45,32 @@ new CountdownTimer({
 });
 ```
 
-Для подсчета значений используй следующие готовые формулы, где `time` - разница
-между `targetDate` и текущей датой.
+To calculate the values, use the following ready-made formulas, where `time` is the difference
+between `targetDate' and the current date.
 
-```js
+``js
 /*
- * Оставшиеся дни: делим значение UTC на 1000 * 60 * 60 * 24, количество
- * миллисекунд в одном дне (миллисекунды * секунды * минуты * часы)
- */
+* Remaining days: divide the UTC value by 1000 * 60 * 60 * 24 , quantity
+ * milliseconds in one day (milliseconds * seconds * minutes * hours)
+*/
 const days = Math.floor(time / (1000 * 60 * 60 * 24));
 
 /*
- * Оставшиеся часы: получаем остаток от предыдущего расчета с помощью оператора
- * остатка % и делим его на количество миллисекунд в одном часе
- * (1000 * 60 * 60 = миллисекунды * минуты * секунды)
+* Remaining hours: get the remainder from the previous calculation using the operator
+ * the remaining % and divide it by the number of milliseconds in one hour
+* (1000 * 60 * 60 = milliseconds * minutes * seconds)
  */
 const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
 /*
- * Оставшиеся минуты: получаем оставшиеся минуты и делим их на количество
- * миллисекунд в одной минуте (1000 * 60 = миллисекунды * секунды)
- */
+* Remaining minutes: get the remaining minutes and divide them by the number
+ * milliseconds in one minute (1000 * 60 = milliseconds * seconds)
+*/
 const mins = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
 
 /*
- * Оставшиеся секунды: получаем оставшиеся секунды и делим их на количество
- * миллисекунд в одной секунде (1000)
- */
+* Remaining seconds: get the remaining seconds and divide them by the number
+ * milliseconds in one second (1000)
+*/
 const secs = Math.floor((time % (1000 * 60)) / 1000);
-```
+``
